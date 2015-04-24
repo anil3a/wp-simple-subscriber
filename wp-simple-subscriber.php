@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: WP Simple Subscriber
-Plugin URI: https://github.com/xxx
+Plugin URI: https://github.com/sdellow/wp-simple-subscriber
 Version: 1.0.0
 Description: Allows you to collect subscribers via a simple form (in a shortcode) or your own custom form. This plugin only collects data it does not  provide a way to send out newsletters. All data is exportable as a CSV file for use with mainstream services like Campaign Monitor, Dot Mailer etc.
 Author: Stew Dellow
