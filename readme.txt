@@ -1,7 +1,7 @@
 === WP Simple Subscriber ===
 Contributors: sdellow
 Donate link: https://hellostew.com
-Tags: wordpress, plugin
+Tags: newsletter, subscribers, subscription, csv, simple, easy, campaign monitor, dot mailer, cheetah mail, mailchimp
 Requires at least: 3.8
 Tested up to: 4.2
 Stable tag: 1.0.0
