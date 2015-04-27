@@ -81,5 +81,5 @@ function vc_wp_simple_subscribers($name, $slug){
 **/
 if(file_exists(plugin_dir_path(__FILE__) . 'controllers/activation.php')){
     require_once(plugin_dir_path(__FILE__) . 'controllers/activation.php');
-    register_activation_hook(__FILE__, array('Activation', 'activate'));
+    register_activation_hook(__FILE__, array('WPSS_Activation', 'activate'));
 }

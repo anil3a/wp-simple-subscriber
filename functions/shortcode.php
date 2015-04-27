@@ -37,10 +37,10 @@ function wp_simple_subscriber_shortcode($atts, $content = null){
 	<!-- Newsletter -->
 	<form class="wpss--form <?php echo $atts['classes']; ?>" action="<?php the_permalink(); ?>" method="post">
 		<?php if($atts['names']) : ?>
-			<input type="text" name="wp_simple_subscriber[first_name]" id="wpss__first_name" placeholder="<?php echo $atts['firstname_placeholder']; ?>">
-			<input type="text" name="wp_simple_subscriber[last_name]" id="wpss__last_name" placeholder="<?php echo $atts['lastname_placeholder']; ?>">
+			<input type="text" name="wp_simple_subscriber[first_name]" id="wpss__first_name" placeholder="<?php echo $atts['firstname_placeholder']; ?>" aria-required="true" required>
+			<input type="text" name="wp_simple_subscriber[last_name]" id="wpss__last_name" placeholder="<?php echo $atts['lastname_placeholder']; ?>" aria-required="true" required>
 		<?php endif; ?>
-		<input type="email" name="wp_simple_subscriber[emailaddress]" id="wpss__emailaddress" placeholder="<?php echo $atts['email_placeholder']; ?>">
+		<input type="email" name="wp_simple_subscriber[emailaddress]" id="wpss__emailaddress" placeholder="<?php echo $atts['email_placeholder']; ?>" aria-required="true" required>
 		<!-- Nonce -->
 		<?php wp_nonce_field('do_forms', 'wp_simple_subscriber_nonce'); ?>
 		<button type="submit"><?php echo $atts['button']; ?></button>

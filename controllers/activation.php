@@ -15,7 +15,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 }
 
 // Define class.
-class Activation{
+class WPSS_Activation{
 
 	/**
 	 * activate
