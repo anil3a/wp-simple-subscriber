@@ -1,4 +1,6 @@
 #!/bin/bash
+# A modification of Paul Clark's (http://bit.ly/1GpnxPz) which is in turn a modification of Dean Clatworthy's script (http://bit.ly/1I4BMeJ).
+# This one takes the functionality from both but adds checks, asks for better input and displays a better output in the terminal.
 
 # ---------------------------------------------------------------------------
 # Vars & Config.
@@ -118,7 +120,7 @@ fi
 
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Release version to $RELEASE_VERSION, Continuing...$(tput sgr0)"
+echo -e "$(tput setaf 2)Release version set to $RELEASE_VERSION, Continuing...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 
@@ -149,7 +151,7 @@ done
 git tag -a "$RELEASE_VERSION" -m "Tagging version $RELEASE_VERSION"
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Version tagged in Git...$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully tagged version as $RELEASE_VERSION in Git...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 # Push to origin.
@@ -157,7 +159,7 @@ git push origin master
 git push origin master --tags
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Pushing latest commit to origin, with tags...$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully pushed latest commit to origin, with tags...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 
@@ -170,14 +172,14 @@ echo -e "------------------------------------------------"
 svn co $SVN_URL $SVN_PATH
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Created local copy of SVN...$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully created local copy of SVN...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 # Exporting the HEAD of master from git to the trunk of SVN.
 git checkout-index -a -f --prefix=$SVN_PATH/trunk/
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Exported HEAD of master to trunk of SVN...$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully exported HEAD of master to trunk of SVN...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 # Ignoring github specific files and deployment script.
@@ -191,7 +193,7 @@ map.conf
 nginx.log" "$SVN_PATH/trunk/"
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Ignored github specific files and deployment script...$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully ignored github specific files and deployment script...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 
@@ -208,7 +210,7 @@ svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn a
 svn commit --username=$SVN_USER -m "$COMMIT_MSG"
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Changed directory to SVN and committing to trunk with message '$COMMIT_MSG'...$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully commited to SVN trunk with message '$COMMIT_MSG'...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 # Create new SVN tag and commit it.
@@ -219,7 +221,7 @@ svn commit --username=$SVN_USER -m "Tagging version $RELEASE_VERSION"
 rm -fr $SVN_PATH/
 ## Report.
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Created new SVN tag and commit it...$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully tagged version as $RELEASE_VERSION in SVN...$(tput sgr0)"
 echo -e "------------------------------------------------"
 
 
@@ -230,5 +232,5 @@ echo -e "------------------------------------------------"
 #
 END_SECONDS="$(date +%s)"
 echo -e "------------------------------------------------"
-echo -e "$(tput setaf 2)Plugin deployed successfully in "$(expr $END_SECONDS - $START_SECONDS)" seconds$(tput sgr0)"
+echo -e "$(tput setaf 2)Successfully deployed plugin in "$(expr $END_SECONDS - $START_SECONDS)" seconds$(tput sgr0)"
 echo -e "------------------------------------------------"

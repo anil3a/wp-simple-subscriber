@@ -83,7 +83,7 @@ function cmb2_wpss_product_metaboxes(){
 		'id'      => WPSS_CMB2_PREFIX . 'status',
 		'type'    => 'select',
 		'options' => array(
-			'Subscribed' => __('Subscribed', 'wpss'),
+			'Subscribed'   => __('Subscribed', 'wpss'),
 			'Unsubscribed' => __('Unsubscribed', 'wpss')
 		)
 	));
