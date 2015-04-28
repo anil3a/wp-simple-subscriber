@@ -22,15 +22,15 @@ if(file_exists(WPSS_PATH . 'vendors/cmb2/init.php')){
  * cmb2
  * Retrieves custom CMB2 data. Will return either custom post meta or meta from options page.
  *
- * Post META: cmb2_wpss('status', 56);
- * Options META: cmb2_wpss('message_1', 'plugin_options');
+ * Post META: WPSS_cmb2('status', 56);
+ * Options META: WPSS_cmb2('message_1', 'plugin_options');
  *
  * @param null
  * @return null
  * @since 1.0.0
  * @version 1.0.0
 **/
-function cmb2_wpss($key, $ID = null){
+function WPSS_cmb2($key, $ID = null){
 	if(!is_numeric($ID)){
 		$options = get_option($ID);
 		return (isset($options[WPSS_CMB2_PREFIX . $key])) ? $options[WPSS_CMB2_PREFIX . $key] : false;
@@ -41,7 +41,7 @@ function cmb2_wpss($key, $ID = null){
 }
 
 /**
- * cmb2_wpss_product_metaboxes
+ * WPSS_cmb2_product_metaboxes
  * NULLED.
  *
  * @param null
@@ -49,7 +49,7 @@ function cmb2_wpss($key, $ID = null){
  * @since 1.0.0
  * @version 1.0.0
 **/
-function cmb2_wpss_product_metaboxes(){
+function WPSS_cmb2_product_metaboxes(){
 	global $metabox;
 
 	// Posttype Options.
@@ -130,10 +130,10 @@ function cmb2_wpss_product_metaboxes(){
 		'type' => 'text'
 	));
 }
-add_action('cmb2_init', 'cmb2_wpss_product_metaboxes');
+add_action('cmb2_init', 'WPSS_cmb2_product_metaboxes');
 
 /**
- * cmb2_wpss_localise_date_format
+ * WPSS_cmb2_localise_date_format
  * NULLED.
  *
  * @param null
@@ -141,15 +141,15 @@ add_action('cmb2_init', 'cmb2_wpss_product_metaboxes');
  * @since 1.0.0
  * @version 1.0.0
 **/
-function cmb2_wpss_localise_date_format($l10n){
+function WPSS_cmb2_localise_date_format($l10n){
     $l10n['defaults']['date_picker']['dateFormat'] = 'dd-mm-yy';
 
     return $l10n;
 }
-add_filter('cmb2_localized_data', 'cmb2_wpss_localise_date_format');
+add_filter('cmb2_localized_data', 'WPSS_cmb2_localise_date_format');
 
 /**
- * cmb2_wpss_options_layout
+ * WPSS_cmb2_options_layout
  * Modifies the result of cmb2_metabox_form().
  *
  * @param null
@@ -157,7 +157,7 @@ add_filter('cmb2_localized_data', 'cmb2_wpss_localise_date_format');
  * @since 1.0.0
  * @version 1.0.0
 **/
-function cmb2_wpss_options_layout($form_format, $object_id, $cmb){
+function WPSS_cmb2_options_layout($form_format, $object_id, $cmb){
 	global $metabox;
 
 	foreach($metabox as $k=>$v){
@@ -177,4 +177,4 @@ function cmb2_wpss_options_layout($form_format, $object_id, $cmb){
 
     return $form_format;
 }
-add_filter('cmb2_get_metabox_form_format', 'cmb2_wpss_options_layout', 10, 3);
+add_filter('cmb2_get_metabox_form_format', 'WPSS_cmb2_options_layout', 10, 3);

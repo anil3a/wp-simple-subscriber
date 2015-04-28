@@ -15,7 +15,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 }
 
 /**
- * wp_simple_subscriber_shortcode
+ * WPSS_shortcode
  * NULLED
  *
  * @param null
@@ -23,7 +23,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
  * @since 1.0.0
  * @version 1.0.0
 **/
-function wp_simple_subscriber_shortcode($atts, $content = null){
+function WPSS_shortcode($atts, $content = null){
 	// Extract shortcode parameters.
     $atts = shortcode_atts(array(
 		'names'                 => false,
@@ -46,4 +46,4 @@ function wp_simple_subscriber_shortcode($atts, $content = null){
 		<button type="submit"><?php echo $atts['button']; ?></button>
 	</form>
 <?php }
-add_shortcode('wp_simple_subscriber', 'wp_simple_subscriber_shortcode');
+add_shortcode('wp_simple_subscriber', 'WPSS_shortcode');

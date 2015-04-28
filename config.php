@@ -41,12 +41,12 @@ require_once(WPSS_PATH . 'functions/cmb2.php');
 // Plugin specific options.
 define('WPSS_CSV_DIR', '/wp-simple-subscriber-csv/');
 define('WPSS_INVALID_EMAIL_ADDRESS',
-	(cmb2_wpss('message_invalid_email_address', 'plugin_options')) ? cmb2_wpss('message_invalid_email_address', 'plugin_options') : __('Email address isn\'t valid!', 'wpss')
+	(WPSS_cmb2('message_invalid_email_address', 'plugin_options')) ? WPSS_cmb2('message_invalid_email_address', 'plugin_options') : __('Email address isn\'t valid!', 'wpss')
 );
 define('WPSS_DUPLICATED_EMAIL_ADDRESS',
-	(cmb2_wpss('message_duplicate_email_address', 'plugin_options')) ? cmb2_wpss('message_duplicate_email_address', 'plugin_options') : __('Email address is already in our database!', 'wpss')
+	(WPSS_cmb2('message_duplicate_email_address', 'plugin_options')) ? WPSS_cmb2('message_duplicate_email_address', 'plugin_options') : __('Email address is already in our database!', 'wpss')
 );
 define('WPSS_SUCCESSFULLY_ADDED',
-	(cmb2_wpss('message_successfully_added', 'plugin_options')) ? cmb2_wpss('message_successfully_added', 'plugin_options') : __('Email successfully added to the database.', 'wpss')
+	(WPSS_cmb2('message_successfully_added', 'plugin_options')) ? WPSS_cmb2('message_successfully_added', 'plugin_options') : __('Email successfully added to the database.', 'wpss')
 );
 define('WPSS_ERROR_ADDING', __('There was an error adding this email to the database. Please try again.', 'wpss'));

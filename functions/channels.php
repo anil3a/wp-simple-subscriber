@@ -15,7 +15,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 }
 
 /**
- * wpss_create_channels
+ * WPSS_create_channels
  * Creates the post types.
  *
  * @param null
@@ -23,7 +23,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
  * @since 1.0.0
  * @version 1.0.0
 **/
-function wpss_create_channels(){
+function WPSS_create_channels(){
 	$args = array(
 		array(
 			'name'     => __('Subscribers', 'wpss'),
@@ -52,10 +52,10 @@ function wpss_create_channels(){
 	);
 	new \WPSS\Controllers\Posttypes($args);
 }
-add_action('after_setup_theme', 'wpss_create_channels');
+add_action('after_setup_theme', 'WPSS_create_channels');
 
 /**
- * wpss_cpt_subscribers_set_column_headers
+ * WPSS_cpt_subscribers_set_column_headers
  * NULLED.
  *
  * @param null
@@ -63,7 +63,7 @@ add_action('after_setup_theme', 'wpss_create_channels');
  * @since 1.0.0
  * @version 1.0.0
 **/
-function wpss_cpt_subscribers_set_column_headers($columns){
+function WPSS_cpt_subscribers_set_column_headers($columns){
 	$columns = array(
 		'cb'       => '<input type="checkbox">',
 		'title'    => __('Email Address', 'wpss'),
@@ -75,10 +75,10 @@ function wpss_cpt_subscribers_set_column_headers($columns){
 
     return $columns;
 }
-add_filter('manage_subscribers_posts_columns', 'wpss_cpt_subscribers_set_column_headers');
+add_filter('manage_subscribers_posts_columns', 'WPSS_cpt_subscribers_set_column_headers');
 
 /**
- * wpss_cpt_subscribers_sortable
+ * WPSS_cpt_subscribers_sortable
  * NULLED.
  *
  * @param null
@@ -86,7 +86,7 @@ add_filter('manage_subscribers_posts_columns', 'wpss_cpt_subscribers_set_column_
  * @since 1.0.0
  * @version 1.0.0
 **/
-function wpss_cpt_subscribers_sortable($columns){
+function WPSS_cpt_subscribers_sortable($columns){
 	$columns = array(
 		'title'    => 'title',
 		'name'     => 'name',
@@ -97,10 +97,10 @@ function wpss_cpt_subscribers_sortable($columns){
 
 	return $columns;
 }
-add_filter('manage_edit-subscribers_sortable_columns', 'wpss_cpt_subscribers_sortable');
+add_filter('manage_edit-subscribers_sortable_columns', 'WPSS_cpt_subscribers_sortable');
 
 /**
- * wpss_cpt_subscribers_set_column_data
+ * WPSS_cpt_subscribers_set_column_data
  * NULLED.
  *
  * @param null
@@ -108,28 +108,28 @@ add_filter('manage_edit-subscribers_sortable_columns', 'wpss_cpt_subscribers_sor
  * @since 1.0.0
  * @version 1.0.0
 **/
-function wpss_cpt_subscribers_set_column_data($column, $post_id){
+function WPSS_cpt_subscribers_set_column_data($column, $post_id){
 	switch($column){
 		case 'name' :
-			$first = (cmb2_wpss('first_name', $post_id)) ? cmb2_wpss('first_name', $post_id) : '';
-			$last  = (cmb2_wpss('last_name', $post_id)) ? ' ' . cmb2_wpss('last_name', $post_id) : '';
+			$first = (WPSS_cmb2('first_name', $post_id)) ? WPSS_cmb2('first_name', $post_id) : '';
+			$last  = (WPSS_cmb2('last_name', $post_id)) ? ' ' . WPSS_cmb2('last_name', $post_id) : '';
 			echo $first . $last;
 		break;
 		case 'status' :
-			echo cmb2_wpss('status', $post_id);
+			echo WPSS_cmb2('status', $post_id);
 		break;
 		case 'signedup' :
-			echo date('d M Y', strtotime(cmb2_wpss('date', $post_id)));
+			echo date('d M Y', strtotime(WPSS_cmb2('date', $post_id)));
 		break;
 		case 'ip' :
 			echo get_post_meta($post_id, WPSS_CMB2_PREFIX . 'ip_address', true);
 		break;
 	}
 }
-add_action('manage_subscribers_posts_custom_column', 'wpss_cpt_subscribers_set_column_data', 10, 2);
+add_action('manage_subscribers_posts_custom_column', 'WPSS_cpt_subscribers_set_column_data', 10, 2);
 
 /**
- * wpss_add_export_button
+ * WPSS_add_export_button
  * NULLED
  *
  * @param null
@@ -137,9 +137,9 @@ add_action('manage_subscribers_posts_custom_column', 'wpss_cpt_subscribers_set_c
  * @since 1.0.0
  * @version 1.0.0
 **/
-function wpss_add_export_button($views){
+function WPSS_add_export_button($views){
     $views['my-button'] = '<a href="' . admin_url('edit.php?post_type=subscribers&plugin_action=generate_csv') . '" class="button-primary" style="margin:5px" onclick="return confirm(\'This will generate and download a CSV. Would you like to proceed?\')">' . __('Export as CSV', 'wpss') . '</a>';
 
     return $views;
 }
-add_filter('views_edit-subscribers', 'wpss_add_export_button');
+add_filter('views_edit-subscribers', 'WPSS_add_export_button');

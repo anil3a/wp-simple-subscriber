@@ -15,7 +15,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 }
 
 /**
- * wpss_add_assets
+ * WPSS_add_assets
  * NULLED
  *
  * @param null
@@ -23,8 +23,8 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
  * @since 1.0.0
  * @version 1.0.0
 **/
-function wpss_add_assets(){
-    wp_localize_script('wpss-js', 'wpss_add_assets_vars', array('pluginurl' => plugin_dir_url(__FILE__)));
+function WPSS_add_assets(){
+    wp_localize_script('wpss-js', 'WPSS_add_assets_vars', array('pluginurl' => plugin_dir_url(__FILE__)));
 
     // JavaScript.
 
@@ -33,4 +33,4 @@ function wpss_add_assets(){
     wp_enqueue_style('wpss-css-dashboard', WPSS_URL . 'templates/admin/dist/css/dashboard.css', false);
     wp_enqueue_style('wpss-css-cmb2', WPSS_URL . 'templates/admin/dist/css/cmb2.css');
 }
-add_action('admin_enqueue_scripts', 'wpss_add_assets', 999);
+add_action('admin_enqueue_scripts', 'WPSS_add_assets', 999);
