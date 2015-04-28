@@ -26,9 +26,10 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 function WPSS_create_channels(){
 	$args = array(
 		array(
-			'name'     => __('Subscribers', 'wpss'),
-			'singular' => __('Subscriber', 'wpss'),
+			'name'     => __('Subscribers', 'WPSS'),
+			'singular' => __('Subscriber', 'WPSS'),
 			'label'    => WPSS_PLG_NAME,
+			'slug'     => 'WPSS_subscribers',
 			'args'     => array(
 				'query_var'            => strtolower('Subscribers'), // Sets the query_var key for this post type
 				'public'               => false, // Controls how the type is visible to authors
@@ -66,11 +67,11 @@ add_action('after_setup_theme', 'WPSS_create_channels');
 function WPSS_cpt_subscribers_set_column_headers($columns){
 	$columns = array(
 		'cb'       => '<input type="checkbox">',
-		'title'    => __('Email Address', 'wpss'),
-		'name'     => __('Name', 'wpss'),
-		'status'   => __('Status', 'wpss'),
-		'signedup' => __('Date', 'wpss'),
-		'ip'       => __('IP Address', 'wpss')
+		'title'    => __('Email Address', 'WPSS'),
+		'name'     => __('Name', 'WPSS'),
+		'status'   => __('Status', 'WPSS'),
+		'signedup' => __('Date', 'WPSS'),
+		'ip'       => __('IP Address', 'WPSS')
 	);
 
     return $columns;
@@ -138,7 +139,7 @@ add_action('manage_subscribers_posts_custom_column', 'WPSS_cpt_subscribers_set_c
  * @version 1.0.0
 **/
 function WPSS_add_export_button($views){
-    $views['my-button'] = '<a href="' . admin_url('edit.php?post_type=subscribers&plugin_action=generate_csv') . '" class="button-primary" style="margin:5px" onclick="return confirm(\'This will generate and download a CSV. Would you like to proceed?\')">' . __('Export as CSV', 'wpss') . '</a>';
+    $views['my-button'] = '<a href="' . admin_url('edit.php?post_type=subscribers&plugin_action=generate_csv') . '" class="button-primary" style="margin:5px" onclick="return confirm(\'This will generate and download a CSV. Would you like to proceed?\')">' . __('Export as CSV', 'WPSS') . '</a>';
 
     return $views;
 }

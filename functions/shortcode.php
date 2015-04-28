@@ -28,10 +28,10 @@ function WPSS_shortcode($atts, $content = null){
     $atts = shortcode_atts(array(
 		'names'                 => false,
 		'classes'               => '',
-		'button'                => __('Sign Up', 'wpss'),
-		'firstname_placeholder' => __('Enter your first name', 'wpss'),
-		'lastname_placeholder'  => __('Enter your last name', 'wpss'),
-		'email_placeholder'     => __('Enter email address', 'wpss')
+		'button'                => __('Sign Up', 'WPSS'),
+		'firstname_placeholder' => __('Enter your first name', 'WPSS'),
+		'lastname_placeholder'  => __('Enter your last name', 'WPSS'),
+		'email_placeholder'     => __('Enter email address', 'WPSS')
 	), $atts, 'wp_simple_subscriber');
 	?>
 	<!-- Newsletter -->

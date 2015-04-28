@@ -17,7 +17,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 global $metabox;
 
 foreach($metabox as $k=>$v){
-	if(strpos($k, 'plugin_options') !== false){
+	if(strpos($k, 'WPSS_plugin_options') !== false){
 		cmb2_metabox_form(WPSS_CMB2_PREFIX . $k, $k);
 	}
 }

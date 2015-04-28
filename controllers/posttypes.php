@@ -57,24 +57,24 @@ class Posttypes{
             $post_name = strtolower($name);
 
             $labels = array(
-                'name'               => _x(sprintf('%s', $name) , 'Post type general name', 'wpss'),
-                'singular_name'      => _x(sprintf('%s', $singular) . ' Item', 'Post type singular name', 'wpss'),
-                'add_new'            => _x('Add New ', sprintf('%s', $name) . ' Item', 'wpss'),
-                'add_new_item'       => sprintf(__('Add New %s', 'wpss'), $singular),
-                'edit_item'          => sprintf(__('Edit %s', 'wpss'), $singular),
-                'new_item'           => sprintf(__('New %s', 'wpss'), $singular),
-                'all_items'          => sprintf(__('%s', 'wpss'), $singular),
-                'view_item'          => sprintf(__('View %s Item', 'wpss'), $name),
-                'search_items'       => sprintf(__('Search %s Items', 'wpss'), $singular),
-                'not_found'          => sprintf(__('No %s Items found', 'wpss'), $singular),
-                'not_found_in_trash' => sprintf(__('No %s Items found in Trash', 'wpss'), $singular),
+                'name'               => _x(sprintf('%s', $name) , 'Post type general name', 'WPPN'),
+                'singular_name'      => _x(sprintf('%s', $singular) . ' Item', 'Post type singular name', 'WPPN'),
+                'add_new'            => _x('Add New ', sprintf('%s', $name) . ' Item', 'WPPN'),
+                'add_new_item'       => sprintf(__('Add New %s', 'WPPN'), $singular),
+                'edit_item'          => sprintf(__('Edit %s', 'WPPN'), $singular),
+                'new_item'           => sprintf(__('New %s', 'WPPN'), $singular),
+                'all_items'          => sprintf(__('%s', 'WPPN'), $singular),
+                'view_item'          => sprintf(__('View %s Item', 'WPPN'), $name),
+                'search_items'       => sprintf(__('Search %s Items', 'WPPN'), $singular),
+                'not_found'          => sprintf(__('No %s Items found', 'WPPN'), $singular),
+                'not_found_in_trash' => sprintf(__('No %s Items found in Trash', 'WPPN'), $singular),
                 'parent_item_colon'  => '',
                 'menu_name'          => (isset($pt['label'])) ? $pt['label'] : $name
             );
 
             $pt['args']['labels'] = $labels;
 
-            register_post_type($post_name, $pt['args']);
+            register_post_type($pt['slug'], $pt['args']);
         }
     }
 
@@ -94,8 +94,8 @@ class Posttypes{
         $messages[$name . ' Item'] = array(
             0  => '', // Unused. Messages start at index 1.
             1  => sprintf(__($name . ' Item updated. <a href="%s">View ' . $name . ' Item</a>'), esc_url(get_permalink($post_ID))),
-            2  => __('Field updated.', 'wpss'),
-            3  => __('Field deleted.', 'wpss'),
+            2  => __('Field updated.', 'WPSS'),
+            3  => __('Field deleted.', 'WPSS'),
             4  => __($singular . ' updated.'),
             5  => isset($_GET['revision']) ? sprintf(__($name . ' Item restored to revision from %s'), wp_post_revision_title((int) $_GET['revision'], false )) : false,
             6  => sprintf(__($name . ' Item published. <a href="%s">View ' . $name . ' Item</a>'), esc_url(get_permalink($post_ID))),
@@ -124,9 +124,9 @@ class Posttypes{
 
         if($name . ' Item' == $screen->id){
             $contextual_help =
-            '<p><strong>' . __('For more information:', 'wpss') . '</strong></p>' .
-            '<p><a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">' . __('Edit Posts Documentation', 'wpss') . '</a></p>' .
-            '<p><a href="http://wordpress.org/support/" target="_blank">' . __('Support Forums', 'wpss') . '</a></p>';
+            '<p><strong>' . __('For more information:', 'WPSS') . '</strong></p>' .
+            '<p><a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">' . __('Edit Posts Documentation', 'WPSS') . '</a></p>' .
+            '<p><a href="http://wordpress.org/support/" target="_blank">' . __('Support Forums', 'WPSS') . '</a></p>';
         }
         elseif('edit-' . $name . ' Item' == $screen->id){
             $contextual_help = null;

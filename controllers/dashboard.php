@@ -46,12 +46,12 @@ class Dashboard{
      * @version 1.0.0
     **/
 	public function create_wp_pages(){
-		$custom_pages['plugin_options'] = add_submenu_page(
-            'edit.php?post_type=subscribers', // Parent
-			__('Options', 'wpss'), // Menu title
-			__('Options', 'wpss'), // Menu title
+		$custom_pages['WPSS_plugin_options'] = add_submenu_page(
+            'edit.php?post_type=wpss_subscribers', // Parent
+			__('Options', 'WPSS'), // Menu title
+			__('Options', 'WPSS'), // Menu title
 			'manage_options', // Permissions
-			'plugin_options', // Unique slug
+			'WPSS_plugin_options', // Unique slug
 			array($this, 'set_page') // Callback view
         );
 	}

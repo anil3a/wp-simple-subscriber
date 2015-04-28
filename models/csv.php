@@ -67,13 +67,13 @@ class CSV{
 		// Write the spreadsheet column titles / labels.
 		fputcsv($handle,
 			array(
-				__('ID', 'wpss'),
-				__('Email Address', 'wpss'),
-				__('First Name', 'wpss'),
-				__('Last Name', 'wpss'),
-				__('Status', 'wpss'),
-				__('Signup Date', 'wpss'),
-				__('IP Address', 'wpss')
+				__('ID', 'WPSS'),
+				__('Email Address', 'WPSS'),
+				__('First Name', 'WPSS'),
+				__('Last Name', 'WPSS'),
+				__('Status', 'WPSS'),
+				__('Signup Date', 'WPSS'),
+				__('IP Address', 'WPSS')
 			)
 		);
 		// Get all users.

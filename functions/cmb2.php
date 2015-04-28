@@ -23,7 +23,7 @@ if(file_exists(WPSS_PATH . 'vendors/cmb2/init.php')){
  * Retrieves custom CMB2 data. Will return either custom post meta or meta from options page.
  *
  * Post META: WPSS_cmb2('status', 56);
- * Options META: WPSS_cmb2('message_1', 'plugin_options');
+ * Options META: WPSS_cmb2('message_1', 'WPSS_plugin_options');
  *
  * @param null
  * @return null
@@ -53,44 +53,44 @@ function WPSS_cmb2_product_metaboxes(){
 	global $metabox;
 
 	// Posttype Options.
-	$metabox['posttype_options'] = new_cmb2_box(array(
+	$metabox['WPSS_posttype_options'] = new_cmb2_box(array(
 		'id'           => WPSS_CMB2_PREFIX . 'product_details',
-		'title'        => __('Subscriber Additional Details', 'wpss'),
-		'object_types' => array('subscribers'),
+		'title'        => __('Subscriber Additional Details', 'WPSS'),
+		'object_types' => array('WPSS_subscribers'),
 		'context'      => 'normal',
 		'priority'     => 'default',
 		'cmb_styles'   => false
 	));
 
 	// Posttype Options :: First Name
-	$metabox['posttype_options']->add_field(array(
-		'name' => __('First Name', 'wpss'),
-		'desc' => __('', 'wpss'),
+	$metabox['WPSS_posttype_options']->add_field(array(
+		'name' => __('First Name', 'WPSS'),
+		'desc' => __('', 'WPSS'),
 		'id'   => WPSS_CMB2_PREFIX . 'first_name',
 		'type' => 'text'
 	));
 	// Posttype Options :: Last Name
-	$metabox['posttype_options']->add_field(array(
-		'name' => __('Last Name', 'wpss'),
-		'desc' => __('', 'wpss'),
+	$metabox['WPSS_posttype_options']->add_field(array(
+		'name' => __('Last Name', 'WPSS'),
+		'desc' => __('', 'WPSS'),
 		'id'   => WPSS_CMB2_PREFIX . 'last_name',
 		'type' => 'text'
 	));
 	// Posttype Options :: Last Name
-	$metabox['posttype_options']->add_field(array(
-		'name'    => __('Status', 'wpss'),
-		'desc'    => __('', 'wpss'),
+	$metabox['WPSS_posttype_options']->add_field(array(
+		'name'    => __('Status', 'WPSS'),
+		'desc'    => __('', 'WPSS'),
 		'id'      => WPSS_CMB2_PREFIX . 'status',
 		'type'    => 'select',
 		'options' => array(
-			'Subscribed'   => __('Subscribed', 'wpss'),
-			'Unsubscribed' => __('Unsubscribed', 'wpss')
+			'Subscribed'   => __('Subscribed', 'WPSS'),
+			'Unsubscribed' => __('Unsubscribed', 'WPSS')
 		)
 	));
 	// Posttype Options :: Last Name
-	$metabox['posttype_options']->add_field(array(
-		'name' => __('Date Signed Up', 'wpss'),
-		'desc' => __('', 'wpss'),
+	$metabox['WPSS_posttype_options']->add_field(array(
+		'name' => __('Date Signed Up', 'WPSS'),
+		'desc' => __('', 'WPSS'),
 		'id'   => WPSS_CMB2_PREFIX . 'date',
 		'type' => 'text_date'
 	));
@@ -100,32 +100,32 @@ function WPSS_cmb2_product_metaboxes(){
 
 
 	// Plugin Options
-	$metabox['plugin_options'] = new_cmb2_box(array(
-		'name'    => __('Option Section Title', 'wpss'),
-		'id'      => WPSS_CMB2_PREFIX . 'plugin_options',
+	$metabox['WPSS_plugin_options'] = new_cmb2_box(array(
+		'name'    => __('Option Section Title', 'WPSS'),
+		'id'      => WPSS_CMB2_PREFIX . 'WPSS_plugin_options',
 		'hookup'  => false,
 		'show_on' => array(
 			'key'   => 'options-page',
-			'value' => array('plugin_options')
+			'value' => array('WPSS_plugin_options')
 		),
 	));
 
 	// Plugin Options :: Test
-	$metabox['plugin_options']->add_field(array(
-		'name' => __('Message: Invalid email address', 'wpss'),
-		'desc' => __('', 'wpss'),
+	$metabox['WPSS_plugin_options']->add_field(array(
+		'name' => __('Message: Invalid email address', 'WPSS'),
+		'desc' => __('', 'WPSS'),
 		'id'   => WPSS_CMB2_PREFIX . 'message_invalid_email_address',
 		'type' => 'text'
 	));
-	$metabox['plugin_options']->add_field(array(
-		'name' => __('Message: Duplicate email address', 'wpss'),
-		'desc' => __('', 'wpss'),
+	$metabox['WPSS_plugin_options']->add_field(array(
+		'name' => __('Message: Duplicate email address', 'WPSS'),
+		'desc' => __('', 'WPSS'),
 		'id'   => WPSS_CMB2_PREFIX . 'message_duplicate_email_address',
 		'type' => 'text'
 	));
-	$metabox['plugin_options']->add_field(array(
-		'name' => __('Message: Successfully added to database', 'wpss'),
-		'desc' => __('', 'wpss'),
+	$metabox['WPSS_plugin_options']->add_field(array(
+		'name' => __('Message: Successfully added to database', 'WPSS'),
+		'desc' => __('', 'WPSS'),
 		'id'   => WPSS_CMB2_PREFIX . 'message_successfully_added',
 		'type' => 'text'
 	));
@@ -161,7 +161,7 @@ function WPSS_cmb2_options_layout($form_format, $object_id, $cmb){
 	global $metabox;
 
 	foreach($metabox as $k=>$v){
-		if(strpos($k, 'plugin_options') !== false){
+		if(strpos($k, 'WPSS_plugin_options') !== false){
 			$layouts[] = $k;
 		}
 	}

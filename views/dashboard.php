@@ -44,6 +44,8 @@ class Dashboard{
 	 * @version 1.0.0
 	**/
 	private function template($page){
+		// Get file.
+		$page = str_replace('WPSS_', '', $page);
 		// Set tpl.
 		$tpl = WPSS_PATH . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . $page . '.php';
 		// Check for template.

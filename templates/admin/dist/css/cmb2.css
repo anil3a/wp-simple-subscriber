@@ -52,27 +52,27 @@
 
 
 /* -- Options -- */
-body[class*="subscribers_page_plugin_options"] .metabox-wrap {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .metabox-wrap {
 	margin: 2rem 0;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-form {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-form {
 	margin: 10px 20px 0 2px;
 	zoom: 1;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-form:before, .cmb-form:after {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-form:before, .cmb-form:after {
 	content: "";
 	display: table;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-form:after {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-form:after {
 	clear: both;
 }
 
-body[class*="subscribers_page_plugin_options"] .cmb2-wrap.form-table {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb2-wrap.form-table {
 	width: 75%;
 	margin-top: 10px;
 	float: left;
 }
-body[class*="subscribers_page_plugin_options"] .submit-wrap {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .submit-wrap {
 	width: 20%;
 	min-width: 255px;
 	padding: 20px;
@@ -84,7 +84,7 @@ body[class*="subscribers_page_plugin_options"] .submit-wrap {
 	box-shadow: 0 1px 1px rgba(0,0,0,.04);
 	background: #fff;
 }
-body[class*="subscribers_page_plugin_options"] .cmb2-metabox {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb2-metabox {
 	min-width: 255px;
 	position: relative;
 	border: 1px solid #e5e5e5;
@@ -92,57 +92,57 @@ body[class*="subscribers_page_plugin_options"] .cmb2-metabox {
 	box-shadow: 0 1px 1px rgba(0,0,0,.04);
 	background: #fff;
 }
-body[class*="subscribers_page_plugin_options"] .cmb2-metabox .cmb-th {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb2-metabox .cmb-th {
 	width: 97%;
 	padding: 10px 1.5%;
 	margin: 0;
 	float: none;
 	border-bottom: 1px solid #eee !important;
 }
-body[class*="subscribers_page_plugin_options"] .cmb2-metabox .cmb-td {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb2-metabox .cmb-td {
 	width: 97%;
 	padding: 20px 1.5%;
 	float: none;
 }
-body[class*="subscribers_page_plugin_options"] .cmb2-metabox .cmb-repeat-group-wrap {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb2-metabox .cmb-repeat-group-wrap {
 	max-width: none;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-repeat-group-wrap .cmb-row {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-repeat-group-wrap .cmb-row {
 	margin: 0;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-repeatable-group .cmb-group-title {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-repeatable-group .cmb-group-title {
 	border-bottom: 1px solid #e9e9e9;
 	background: #F7F7F7;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-repeat-group-wrap .cmb-repeat-group-field {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-repeat-group-wrap .cmb-repeat-group-field {
 	padding: 10px 0;
 	border-bottom: 0;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-repeatable-group .cmb-nested .cmb-th {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-repeatable-group .cmb-nested .cmb-th {
 	width: 100%;
 	padding: 0;
 	margin: 0 0 10px;
 	border-bottom: 0 !important;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-repeatable-group .cmb-nested .cmb-td {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-repeatable-group .cmb-nested .cmb-td {
 	width: 100%;
 	padding: 0;
 	margin: 0;
 	float: none;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-repeatable-group .cmb-td {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-repeatable-group .cmb-td {
 	padding: 0 1.5%;
 	margin: 11px 0;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-th label {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-th label {
 	padding: 0;
 }
-body[class*="subscribers_page_plugin_options"] .cmb-add-row {
+body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb-add-row {
 	margin: 0 !important;
 }
 
 @media (max-width: 1360px){
-	body[class*="subscribers_page_plugin_options"] .cmb2-wrap.form-table {
+	body[class*="wpss_subscribers_page_WPSS_plugin_options"] .cmb2-wrap.form-table {
 		width: 70%;
 	}
 }
