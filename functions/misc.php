@@ -24,6 +24,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 if(!function_exists('output')){
     function output($input, $print = false){
         if(isset($_REQUEST['ajaxrequest'])){
+            header('Content-Type: application/json');
             print json_encode($input);
             exit();
         }
