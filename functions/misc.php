@@ -29,12 +29,12 @@ if(!function_exists('output')){
             exit();
         }
         else{
-        	if($print){
-        		print_r($input);
-        	}
-        	else{
-            	return $input;
-        	}
+            if($print){
+                print_r($input);
+            }
+            else{
+                return $input;
+            }
         }
     }
 }
