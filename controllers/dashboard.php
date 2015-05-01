@@ -17,6 +17,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
     die('Sorry. This file cannot be loaded directly.');
 }
 
+
 // Define class.
 class Dashboard{
 
@@ -47,7 +48,7 @@ class Dashboard{
     **/
 	public function create_wp_pages(){
 		$custom_pages['WPSS_plugin_options'] = add_submenu_page(
-            'edit.php?post_type=wpss_subscribers', // Parent
+            'edit.php?post_type=' . WPSS_POST_TYPE_SLUG_1, // Parent
 			__('Options', 'WPSS'), // Menu title
 			__('Options', 'WPSS'), // Menu title
 			'manage_options', // Permissions

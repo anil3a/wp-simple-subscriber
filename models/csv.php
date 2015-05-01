@@ -86,11 +86,11 @@ class CSV{
 				array(
 					$row->ID,
 					$row->post_title,
-					get_post_meta($row->ID, WPSS_CMB2_PREFIX . 'first_name', true),
-					get_post_meta($row->ID, WPSS_CMB2_PREFIX . 'last_name', true),
-					get_post_meta($row->ID, WPSS_CMB2_PREFIX . 'status', true),
-					get_post_meta($row->ID, WPSS_CMB2_PREFIX . 'date', true),
-					get_post_meta($row->ID, WPSS_CMB2_PREFIX . 'ip_address', true)
+					get_post_meta($row->ID, WPSS_META_PREFIX . 'first_name', true),
+					get_post_meta($row->ID, WPSS_META_PREFIX . 'last_name', true),
+					get_post_meta($row->ID, WPSS_META_PREFIX . 'status', true),
+					get_post_meta($row->ID, WPSS_META_PREFIX . 'date', true),
+					get_post_meta($row->ID, WPSS_META_PREFIX . 'ip_address', true)
 				)
 			);
 		}

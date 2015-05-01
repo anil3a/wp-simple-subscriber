@@ -31,6 +31,6 @@ function WPSS_add_assets(){
     // CSS.
     wp_enqueue_style('jquery-ui-1.11.4', 'https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', false);
     wp_enqueue_style('wpss-css-dashboard', WPSS_URL . 'templates/admin/dist/css/dashboard.css', false);
-    wp_enqueue_style('wpss-css-cmb2', WPSS_URL . 'templates/admin/dist/css/cmb2.css');
+    wp_enqueue_style('wpss-css-metabox', WPSS_URL . 'templates/admin/dist/css/metabox.css');
 }
 add_action('admin_enqueue_scripts', 'WPSS_add_assets', 999);

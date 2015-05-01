@@ -1,0 +1,53 @@
+
+
+.cf {
+	zoom: 1;
+}
+.cf:before,
+.cf:after {
+	content: "";
+	display: table;
+}
+.cf:after {
+	clear: both;
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+
+/* -- General -- */
+.wpss_post_box .field {
+	margin: 1rem 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing   : border-box;
+	-o-box-sizing     : border-box;
+	-ms-box-sizing    : border-box;
+	box-sizing        : border-box;
+}
+.wpss_post_box .field.field--left,
+.wpss_post_box .field.field--right {
+	width: 50%;
+	margin: 0;
+}
+.wpss_post_box .field.field--left {
+	padding-right: 1rem;
+	float: left;
+}
+.wpss_post_box .field.field--right {
+	padding-left: 1rem;
+	float: right;
+}
+
+.wpss_post_box label,
+.wpss_post_box input[type="text"],
+.wpss_post_box input[type="email"],
+.wpss_post_box input[type="url"],
+.wpss_post_box select,
+.wpss_post_box textarea {
+	display: block;
+}
+.wpss_post_box label {
+	margin-bottom: 5px;
+	font-weight: bold;
+}

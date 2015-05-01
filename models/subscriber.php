@@ -102,11 +102,11 @@ class Subscriber{
 		// Check error.
         if(!is_wp_error($postID)){
         	// Update post meta.
-			update_post_meta($postID, WPSS_CMB2_PREFIX . 'first_name', (isset($data['first_name'])) ? $data['first_name'] : '-');
-			update_post_meta($postID, WPSS_CMB2_PREFIX . 'last_name', (isset($data['last_name'])) ? $data['last_name'] : '-');
-			update_post_meta($postID, WPSS_CMB2_PREFIX . 'status', 'Subscribed');
-			update_post_meta($postID, WPSS_CMB2_PREFIX . 'date', date('Y-m-d H:i:s'));
-			update_post_meta($postID, WPSS_CMB2_PREFIX . 'ip_address', $_SERVER['REMOTE_ADDR']);
+			update_post_meta($postID, WPSS_META_PREFIX . 'firstname', (isset($data['firstname'])) ? $data['firstname'] : '-');
+			update_post_meta($postID, WPSS_META_PREFIX . 'lastname', (isset($data['lastname'])) ? $data['lastname'] : '-');
+			update_post_meta($postID, WPSS_META_PREFIX . 'status', 'Subscribed');
+			update_post_meta($postID, WPSS_META_PREFIX . 'date', date('Y-m-d H:i:s'));
+			update_post_meta($postID, WPSS_META_PREFIX . 'ip_address', $_SERVER['REMOTE_ADDR']);
 			// Output message.
 			output(array(
 				'type'     => 'success',

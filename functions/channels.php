@@ -26,12 +26,12 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 function WPSS_create_channels(){
 	$args = array(
 		array(
-			'name'     => __('Subscribers', 'WPSS'),
-			'singular' => __('Subscriber', 'WPSS'),
+			'name'     => WPSS_POST_TYPE_NAME_1,
+			'singular' => WPSS_POST_TYPE_SING_1,
 			'label'    => WPSS_PLG_NAME,
-			'slug'     => 'WPSS_subscribers',
+			'slug'     => WPSS_POST_TYPE_SLUG_1,
 			'args'     => array(
-				'query_var'            => strtolower('Subscribers'), // Sets the query_var key for this post type
+				'query_var'            => strtolower(WPSS_POST_TYPE_SLUG_1), // Sets the query_var key for this post type
 				'public'               => false, // Controls how the type is visible to authors
 				'publicly_queryable'   => false, // Whether queries can be performed on the front end as part of parse_request()
 				'show_ui'              => true, // Whether to generate a default UI for managing this post type in the admin
@@ -47,7 +47,7 @@ function WPSS_create_channels(){
 				'capabilities'         => array(), // An array of the capabilities for this post type
 				'supports'             => array('title'), // An alias for calling add_post_type_support() directly
 				'taxonomies'           => array(), // An array of registered taxonomies like category or post_tag that will be used with this post type
-				'register_meta_box_cb' => '' // Provide a callback function that will be called when setting up the meta boxes for the edit form
+				'register_meta_box_cb' => 'WPSS_create_channel_metaboxes' // Provide a callback function that will be called when setting up the meta boxes for the edit form
 			)
 		)
 	);
@@ -56,7 +56,7 @@ function WPSS_create_channels(){
 add_action('after_setup_theme', 'WPSS_create_channels');
 
 /**
- * WPSS_cpt_subscribers_set_column_headers
+ * WPSS_cpt_wpsssubscribers_set_column_headers
  * NULLED.
  *
  * @param null
@@ -64,7 +64,7 @@ add_action('after_setup_theme', 'WPSS_create_channels');
  * @since 1.0.0
  * @version 1.0.0
 **/
-function WPSS_cpt_subscribers_set_column_headers($columns){
+function WPSS_cpt_wpsssubscribers_set_column_headers($columns){
 	$columns = array(
 		'cb'       => '<input type="checkbox">',
 		'title'    => __('Email Address', 'WPSS'),
@@ -76,10 +76,10 @@ function WPSS_cpt_subscribers_set_column_headers($columns){
 
     return $columns;
 }
-add_filter('manage_subscribers_posts_columns', 'WPSS_cpt_subscribers_set_column_headers');
+add_filter('manage_wpsssubscribers_posts_columns', 'WPSS_cpt_wpsssubscribers_set_column_headers');
 
 /**
- * WPSS_cpt_subscribers_sortable
+ * WPSS_cpt_wpsssubscribers_sortable
  * NULLED.
  *
  * @param null
@@ -87,7 +87,7 @@ add_filter('manage_subscribers_posts_columns', 'WPSS_cpt_subscribers_set_column_
  * @since 1.0.0
  * @version 1.0.0
 **/
-function WPSS_cpt_subscribers_sortable($columns){
+function WPSS_cpt_wpsssubscribers_sortable($columns){
 	$columns = array(
 		'title'    => 'title',
 		'name'     => 'name',
@@ -98,10 +98,10 @@ function WPSS_cpt_subscribers_sortable($columns){
 
 	return $columns;
 }
-add_filter('manage_edit-subscribers_sortable_columns', 'WPSS_cpt_subscribers_sortable');
+add_filter('manage_edit-wpsssubscribers_sortable_columns', 'WPSS_cpt_wpsssubscribers_sortable');
 
 /**
- * WPSS_cpt_subscribers_set_column_data
+ * WPSS_cpt_wpsssubscribers_set_column_data
  * NULLED.
  *
  * @param null
@@ -109,25 +109,25 @@ add_filter('manage_edit-subscribers_sortable_columns', 'WPSS_cpt_subscribers_sor
  * @since 1.0.0
  * @version 1.0.0
 **/
-function WPSS_cpt_subscribers_set_column_data($column, $post_id){
+function WPSS_cpt_wpsssubscribers_set_column_data($column, $post_id){
 	switch($column){
 		case 'name' :
-			$first = (WPSS_cmb2('first_name', $post_id)) ? WPSS_cmb2('first_name', $post_id) : '';
-			$last  = (WPSS_cmb2('last_name', $post_id)) ? ' ' . WPSS_cmb2('last_name', $post_id) : '';
+			$first = (WPSS_option('firstname', $post_id)) ? WPSS_option('firstname', $post_id) : '';
+			$last  = (WPSS_option('lastname', $post_id)) ? ' ' . WPSS_option('lastname', $post_id) : '';
 			echo $first . $last;
 		break;
 		case 'status' :
-			echo WPSS_cmb2('status', $post_id);
+			echo WPSS_option('status', $post_id);
 		break;
 		case 'signedup' :
-			echo date('d M Y', strtotime(WPSS_cmb2('date', $post_id)));
+			echo date('d M Y', strtotime(WPSS_option('date', $post_id)));
 		break;
 		case 'ip' :
-			echo get_post_meta($post_id, WPSS_CMB2_PREFIX . 'ip_address', true);
+			echo get_post_meta($post_id, WPSS_META_PREFIX . 'ip_address', true);
 		break;
 	}
 }
-add_action('manage_subscribers_posts_custom_column', 'WPSS_cpt_subscribers_set_column_data', 10, 2);
+add_action('manage_wpsssubscribers_posts_custom_column', 'WPSS_cpt_wpsssubscribers_set_column_data', 10, 2);
 
 /**
  * WPSS_add_export_button
@@ -143,4 +143,4 @@ function WPSS_add_export_button($views){
 
     return $views;
 }
-add_filter('views_edit-subscribers', 'WPSS_add_export_button');
+add_filter('views_edit-wpsssubscribers', 'WPSS_add_export_button');

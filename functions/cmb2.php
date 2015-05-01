@@ -33,10 +33,10 @@ if(file_exists(WPSS_PATH . 'vendors/cmb2/init.php')){
 function WPSS_cmb2($key, $ID = null){
 	if(!is_numeric($ID)){
 		$options = get_option($ID);
-		return (isset($options[WPSS_CMB2_PREFIX . $key])) ? $options[WPSS_CMB2_PREFIX . $key] : false;
+		return (isset($options[WPSS_META_PREFIX . $key])) ? $options[WPSS_META_PREFIX . $key] : false;
 	}
 	elseif(is_numeric($ID)){
-		return (get_post_meta($ID, WPSS_CMB2_PREFIX . $key)) ? get_post_meta($ID, WPSS_CMB2_PREFIX . $key, true) : false;
+		return (get_post_meta($ID, WPSS_META_PREFIX . $key)) ? get_post_meta($ID, WPSS_META_PREFIX . $key, true) : false;
 	}
 }
 
@@ -54,7 +54,7 @@ function WPSS_cmb2_product_metaboxes(){
 
 	// Posttype Options.
 	$metabox['WPSS_posttype_options'] = new_cmb2_box(array(
-		'id'           => WPSS_CMB2_PREFIX . 'product_details',
+		'id'           => WPSS_META_PREFIX . 'product_details',
 		'title'        => __('Subscriber Additional Details', 'WPSS'),
 		'object_types' => array('WPSS_subscribers'),
 		'context'      => 'normal',
@@ -66,21 +66,21 @@ function WPSS_cmb2_product_metaboxes(){
 	$metabox['WPSS_posttype_options']->add_field(array(
 		'name' => __('First Name', 'WPSS'),
 		'desc' => __('', 'WPSS'),
-		'id'   => WPSS_CMB2_PREFIX . 'first_name',
+		'id'   => WPSS_META_PREFIX . 'first_name',
 		'type' => 'text'
 	));
 	// Posttype Options :: Last Name
 	$metabox['WPSS_posttype_options']->add_field(array(
 		'name' => __('Last Name', 'WPSS'),
 		'desc' => __('', 'WPSS'),
-		'id'   => WPSS_CMB2_PREFIX . 'last_name',
+		'id'   => WPSS_META_PREFIX . 'last_name',
 		'type' => 'text'
 	));
 	// Posttype Options :: Last Name
 	$metabox['WPSS_posttype_options']->add_field(array(
 		'name'    => __('Status', 'WPSS'),
 		'desc'    => __('', 'WPSS'),
-		'id'      => WPSS_CMB2_PREFIX . 'status',
+		'id'      => WPSS_META_PREFIX . 'status',
 		'type'    => 'select',
 		'options' => array(
 			'Subscribed'   => __('Subscribed', 'WPSS'),
@@ -91,7 +91,7 @@ function WPSS_cmb2_product_metaboxes(){
 	$metabox['WPSS_posttype_options']->add_field(array(
 		'name' => __('Date Signed Up', 'WPSS'),
 		'desc' => __('', 'WPSS'),
-		'id'   => WPSS_CMB2_PREFIX . 'date',
+		'id'   => WPSS_META_PREFIX . 'date',
 		'type' => 'text_date'
 	));
 
@@ -102,7 +102,7 @@ function WPSS_cmb2_product_metaboxes(){
 	// Plugin Options
 	$metabox['WPSS_plugin_options'] = new_cmb2_box(array(
 		'name'    => __('Option Section Title', 'WPSS'),
-		'id'      => WPSS_CMB2_PREFIX . 'WPSS_plugin_options',
+		'id'      => WPSS_META_PREFIX . 'WPSS_plugin_options',
 		'hookup'  => false,
 		'show_on' => array(
 			'key'   => 'options-page',
@@ -114,19 +114,19 @@ function WPSS_cmb2_product_metaboxes(){
 	$metabox['WPSS_plugin_options']->add_field(array(
 		'name' => __('Message: Invalid email address', 'WPSS'),
 		'desc' => __('', 'WPSS'),
-		'id'   => WPSS_CMB2_PREFIX . 'message_invalid_email_address',
+		'id'   => WPSS_META_PREFIX . 'message_invalid_email_address',
 		'type' => 'text'
 	));
 	$metabox['WPSS_plugin_options']->add_field(array(
 		'name' => __('Message: Duplicate email address', 'WPSS'),
 		'desc' => __('', 'WPSS'),
-		'id'   => WPSS_CMB2_PREFIX . 'message_duplicate_email_address',
+		'id'   => WPSS_META_PREFIX . 'message_duplicate_email_address',
 		'type' => 'text'
 	));
 	$metabox['WPSS_plugin_options']->add_field(array(
 		'name' => __('Message: Successfully added to database', 'WPSS'),
 		'desc' => __('', 'WPSS'),
-		'id'   => WPSS_CMB2_PREFIX . 'message_successfully_added',
+		'id'   => WPSS_META_PREFIX . 'message_successfully_added',
 		'type' => 'text'
 	));
 }
