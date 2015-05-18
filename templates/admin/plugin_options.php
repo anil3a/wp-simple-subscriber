@@ -17,7 +17,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 ?>
 <div class="wrap">
     <h2><?php printf(__('%s Options', 'WPSS'), WPSS_PLG_NAME); ?></h2>
-    <form class="wpss_plugin_options_form" action="" method="post">
+    <form class="WPSS_plugin_options_form" action="" method="post">
         <button class="button-primary"><?php _e('Save Options', 'WPSS'); ?></button>
         <div id="poststuff">
             <div id="post-body" class="metabox-holder columns-2">

@@ -54,7 +54,6 @@ function add_metabox_classes($classes){
     return $classes;
 }
 add_filter('postbox_classes_wpsssubscribers_WPSS_subscriber_additional_details', 'add_metabox_classes');
-// add_filter('postbox_classes_{POST TYPE SLUG}_{ID OF THE METABOX}', 'add_metabox_classes');
 
 
 /**
@@ -112,7 +111,7 @@ function WPSS_subscriber_additional_details_content(){
 		</div>
 		<div class="field field--right">
 			<label for="WPSS_subscriber_date"><?php _e('Date Signed Up', 'WPSS'); ?></label>
-			<input type="text" name="<?php echo WPSS_META_PREFIX; ?>[date]" id="WPSS_subscriber_date" class="widefat" value="<?php echo get_post_meta($post->ID, WPSS_META_PREFIX . 'date', true); ?>">
+			<input type="text" name="<?php echo WPSS_META_PREFIX; ?>[date]" id="WPSS_subscriber_date" class="widefat js-datepicker" value="<?php echo get_post_meta($post->ID, WPSS_META_PREFIX . 'date', true); ?>">
 		</div>
 	</div>
 	<!-- Nonce -->

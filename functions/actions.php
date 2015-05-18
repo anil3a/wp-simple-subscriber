@@ -24,13 +24,19 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
  * @version 1.0.0
 **/
 function WPSS_add_assets(){
-    wp_localize_script('wpss-js', 'WPSS_add_assets_vars', array('pluginurl' => plugin_dir_url(__FILE__)));
-
     // JavaScript.
+    wp_enqueue_script('WPSS-jquery-ui-1.11.4', WPSS_URL . 'templates/admin/dist/js/jquery-ui.js', false);
+    wp_enqueue_script('WPSS-js-dashboard', WPSS_URL . 'templates/admin/dist/js/dashboard.js', false);
 
     // CSS.
-    wp_enqueue_style('jquery-ui-1.11.4', 'https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', false);
-    wp_enqueue_style('wpss-css-dashboard', WPSS_URL . 'templates/admin/dist/css/dashboard.css', false);
-    wp_enqueue_style('wpss-css-metabox', WPSS_URL . 'templates/admin/dist/css/metabox.css');
+    wp_enqueue_style('WPSS-jquery-ui-1.11.4', WPSS_URL . 'templates/admin/dist/css/jquery-ui.css', false);
+    wp_enqueue_style('WPSS-css-dashboard', WPSS_URL . 'templates/admin/dist/css/dashboard.css', false);
+    wp_enqueue_style('WPSS-css-metabox', WPSS_URL . 'templates/admin/dist/css/metabox.css');
+
+    // Localize.
+    wp_localize_script('WPSS-js-dashboard', 'dashboard', array(
+		'pluginurl'   => plugin_dir_url(__FILE__),
+		'date_format' => get_option('date_format')
+    ));
 }
 add_action('admin_enqueue_scripts', 'WPSS_add_assets', 999);
