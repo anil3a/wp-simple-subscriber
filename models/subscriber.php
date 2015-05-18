@@ -59,7 +59,7 @@ class Subscriber{
 		// Get all users.
 		$users = get_posts(array(
 			'posts_per_page' => -1,
-			'post_type'      => 'subscribers'
+			'post_type'      => WPSS_POST_TYPE_SLUG_1
 		));
 		// Add all email address to an array.
 		$confirmed = array_map(function($user){
@@ -94,7 +94,7 @@ class Subscriber{
 		// Build data array.
 		$post = array(
 			'post_title'  => $data['emailaddress'],
-			'post_type'   => 'subscribers',
+			'post_type'   => WPSS_POST_TYPE_SLUG_1,
 			'post_status' => 'publish'
 		);
 		// Insert post.

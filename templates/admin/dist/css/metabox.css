@@ -1,14 +1,18 @@
 
 
-.cf {
+.cf,
+.wpss_plugin_options_form .inside {
 	zoom: 1;
 }
 .cf:before,
-.cf:after {
+.cf:after,
+.wpss_plugin_options_form .inside:before,
+.wpss_plugin_options_form .inside:after {
 	content: "";
 	display: table;
 }
-.cf:after {
+.cf:after,
+.wpss_plugin_options_form .inside:after {
 	clear: both;
 }
 
@@ -17,7 +21,8 @@
 
 
 /* -- General -- */
-.wpss_post_box .field {
+.wpss_post_box .field,
+.wpss_plugin_options_form .field {
 	margin: 1rem 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing   : border-box;
@@ -26,15 +31,19 @@
 	box-sizing        : border-box;
 }
 .wpss_post_box .field.field--left,
-.wpss_post_box .field.field--right {
+.wpss_post_box .field.field--right,
+.wpss_plugin_options_form .field.field--left,
+.wpss_plugin_options_form .field.field--right {
 	width: 50%;
 	margin: 0;
 }
-.wpss_post_box .field.field--left {
+.wpss_post_box .field.field--left,
+.wpss_plugin_options_form .field.field--left {
 	padding-right: 1rem;
 	float: left;
 }
-.wpss_post_box .field.field--right {
+.wpss_post_box .field.field--right,
+.wpss_plugin_options_form .field.field--right {
 	padding-left: 1rem;
 	float: right;
 }
@@ -44,10 +53,17 @@
 .wpss_post_box input[type="email"],
 .wpss_post_box input[type="url"],
 .wpss_post_box select,
-.wpss_post_box textarea {
+.wpss_post_box textarea,
+.wpss_plugin_options_form label,
+.wpss_plugin_options_form input[type="text"],
+.wpss_plugin_options_form input[type="email"],
+.wpss_plugin_options_form input[type="url"],
+.wpss_plugin_options_form select,
+.wpss_plugin_options_form textarea {
 	display: block;
 }
-.wpss_post_box label {
+.wpss_post_box label,
+.wpss_plugin_options_form label {
 	margin-bottom: 5px;
 	font-weight: bold;
 }

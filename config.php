@@ -27,6 +27,7 @@ define('WPSS_URL', plugin_dir_url(__FILE__));
 define('WPSS_POST_TYPE_NAME_1', __('Subscribers', 'WPPN'));
 define('WPSS_POST_TYPE_SING_1', __('Subscriber', 'WPPN'));
 define('WPSS_POST_TYPE_SLUG_1', 'wpsssubscribers');
+define('WPSS_META_BOX_OPTIONS_1', 'WPSS_plugin_options_metaboxes');
 
 // Meta Prefix.
 define('WPSS_META_PREFIX', '_WPSS_');
@@ -46,13 +47,15 @@ require_once(WPSS_PATH . 'functions/shortcode.php');
 
 // Plugin specific options.
 define('WPSS_CSV_DIR', '/wp-simple-subscriber-csv/');
-// define('WPSS_INVALID_EMAIL_ADDRESS',
-// 	(WPSS_cmb2('message_invalid_email_address', 'plugin_options')) ? WPSS_cmb2('message_invalid_email_address', 'plugin_options') : __('Email address isn\'t valid!', 'WPSS')
-// );
-// define('WPSS_DUPLICATED_EMAIL_ADDRESS',
-// 	(WPSS_cmb2('message_duplicate_email_address', 'plugin_options')) ? WPSS_cmb2('message_duplicate_email_address', 'plugin_options') : __('Email address is already in our database!', 'WPSS')
-// );
-// define('WPSS_SUCCESSFULLY_ADDED',
-// 	(WPSS_cmb2('message_successfully_added', 'plugin_options')) ? WPSS_cmb2('message_successfully_added', 'plugin_options') : __('Email successfully added to the database.', 'WPSS')
-// );
-// define('WPSS_ERROR_ADDING', __('There was an error adding this email to the database. Please try again.', 'WPSS'));
+define('WPSS_INVALID_EMAIL_ADDRESS',
+	(get_option(WPSS_META_PREFIX . 'invalid_email_address', 'plugin_options')) ? get_option(WPSS_META_PREFIX . 'invalid_email_address', 'plugin_options') : __('Email address isn\'t valid!', 'WPSS')
+);
+define('WPSS_DUPLICATED_EMAIL_ADDRESS',
+	(get_option(WPSS_META_PREFIX . 'duplicate_email_address', 'plugin_options')) ? get_option(WPSS_META_PREFIX . 'duplicate_email_address', 'plugin_options') : __('Email address is already in our database!', 'WPSS')
+);
+define('WPSS_SUCCESSFULLY_ADDED',
+	(get_option(WPSS_META_PREFIX . 'successfully_added', 'plugin_options')) ? get_option(WPSS_META_PREFIX . 'successfully_added', 'plugin_options') : __('Email successfully added to the database.', 'WPSS')
+);
+define('WPSS_ERROR_ADDING',
+	(get_option(WPSS_META_PREFIX . 'error_added', 'plugin_options')) ? get_option(WPSS_META_PREFIX . 'error_added', 'plugin_options') : __('There was an error adding this email to the database. Please try again.', 'WPSS')
+);
