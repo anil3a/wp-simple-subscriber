@@ -1,9 +1,8 @@
 # WP Top Navigation
 
 ## About
-WP Top Navigation puts the WordPress admin navigation at the top of the screen providing more screen estate for the rest of WordPress. Its non-destructive nature still allows for a responsive admin area.
+WP Simple Subscriber simply collects data for an external Newsletter service of your choice. All data is exportable as a CSV file for use with mainstream services like Campaign Monitor, Dot Mailer etc. This plugin does not provide a way to send out newsletters.
 
 ## Install
-1. Upload `wp-top-navigation` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. There are no settings! Just enjoy.
+1. Upload `wp-simple-subscriber` to the `/wp-content/plugins/` directory (or custom content directory).
+1. Activate the plugin through the 'Plugins' menu in WordPress.
