@@ -1,4 +1,4 @@
-# WP Top Navigation
+# WP Simple Subscriber
 
 ## About
 WP Simple Subscriber simply collects data for an external Newsletter service of your choice. All data is exportable as a CSV file for use with mainstream services like Campaign Monitor, Dot Mailer etc. This plugin does not provide a way to send out newsletters.
