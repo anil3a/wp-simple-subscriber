@@ -139,7 +139,7 @@ add_action('manage_wpsssubscribers_posts_custom_column', 'WPSS_cpt_wpsssubscribe
  * @version 1.0.0
 **/
 function WPSS_add_export_button($views){
-    $views['my-button'] = '<a href="' . admin_url('edit.php?post_type=subscribers&plugin_action=generate_csv') . '" class="button-primary" style="margin:5px" onclick="return confirm(\'This will generate and download a CSV. Would you like to proceed?\')">' . __('Export as CSV', 'WPSS') . '</a>';
+    $views['my-button'] = '<a href="' . admin_url('edit.php?post_type=' . WPSS_POST_TYPE_SLUG_1 . '&plugin_action=generate_csv') . '" class="button-primary" style="margin:5px" onclick="return confirm(\'This will generate and download a CSV. Would you like to proceed?\')">' . __('Export as CSV', 'WPSS') . '</a>';
 
     return $views;
 }

@@ -15,7 +15,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 }
 
 // Plugin version.
-define('WPSS_PLG_VERSION', '1.0.0');
+define('WPSS_PLG_VERSION', '1.1.0');
 // Plugin name.
 define('WPSS_PLG_NAME', 'WP Simple Subscriber');
 // Plugin directory.

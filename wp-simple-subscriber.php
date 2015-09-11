@@ -60,7 +60,7 @@ add_action('wp', 'listen_wp_simple_subscribers');
 **/
 function vc_wp_simple_subscribers($name, $slug){
     // Version variables
-    $required_php_version = '5.5'; $required_wp_version = '4.0';
+    $required_php_version = '5.5'; $required_wp_version = '3.8';
 
     // Version checks
     if(version_compare(PHP_VERSION, $required_php_version, '<') || version_compare(get_bloginfo('version'), $required_wp_version, '<')){

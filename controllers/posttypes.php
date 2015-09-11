@@ -20,7 +20,7 @@ if(!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVE
 // Define class.
 class Posttypes{
 
-	public static $posttypes;
+    public static $posttypes;
 
     /**
      * __construct
@@ -33,25 +33,25 @@ class Posttypes{
      * @version 1.0.0
     **/
     public function __construct($posttypes){
-        $this->posttypes = $posttypes;
+        self::$posttypes = $posttypes;
 
         add_action('init', array(&$this, 'register'));
         add_filter('post_updated_messages', array(&$this, 'messages'));
         add_action('contextual_help', array(&$this, 'contextual_help'), 10, 3);
     }
 
-	/**
-	 * register
-	 * NULLED.
-	 *
-	 * @access public
-	 * @param null
-	 * @return null
-	 * @since 1.0.0
-	 * @version 1.0.0
-	**/
-    public function register(){
-        foreach($this->posttypes as $pt){
+    /**
+     * register
+     * NULLED.
+     *
+     * @access public
+     * @param null
+     * @return null
+     * @since 1.0.0
+     * @version 1.0.0
+    **/
+    public static function register(){
+        foreach(self::$posttypes as $pt){
             $name      = $pt['name'];
             $singular  = $pt['singular'];
             $post_name = strtolower($name);
@@ -78,17 +78,17 @@ class Posttypes{
         }
     }
 
-	/**
-	 * messages
-	 * NULLED.
-	 *
-	 * @access public
-	 * @param null
-	 * @return null
-	 * @since 1.0.0
-	 * @version 1.0.0
-	**/
-    public function messages($messages){
+    /**
+     * messages
+     * NULLED.
+     *
+     * @access public
+     * @param null
+     * @return null
+     * @since 1.0.0
+     * @version 1.0.0
+    **/
+    public static function messages($messages){
         global $post, $post_ID, $name, $singular, $post_name;
 
         $messages[$name . ' Item'] = array(
@@ -109,17 +109,17 @@ class Posttypes{
         return $messages;
     }
 
-	/**
-	 * contextual_help
-	 * NULLED.
-	 *
-	 * @access public
-	 * @param null
-	 * @return null
-	 * @since 1.0.0
-	 * @version 1.0.0
-	**/
-    public function contextual_help($contextual_help, $screen_id, $screen){
+    /**
+     * contextual_help
+     * NULLED.
+     *
+     * @access public
+     * @param null
+     * @return null
+     * @since 1.0.0
+     * @version 1.0.0
+    **/
+    public static function contextual_help($contextual_help, $screen_id, $screen){
         global $name;
 
         if($name . ' Item' == $screen->id){

@@ -79,7 +79,7 @@ class CSV{
 		// Get all users.
 		$users = get_posts(array(
 			'posts_per_page' => -1,
-			'post_type'      => 'subscribers'
+			'post_type'      => WPSS_POST_TYPE_SLUG_1
 		));
 		foreach($users as $row){
 			fputcsv($handle,
