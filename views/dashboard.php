@@ -27,7 +27,7 @@ class Dashboard{
 	 * @since 1.0.0
 	 * @version 1.0.0
 	**/
-	public function fetch($page){
+	public static function fetch($page){
 		// Set template.
 		$template = self::template($page);
 		// Get view.
@@ -43,7 +43,7 @@ class Dashboard{
 	 * @since 1.0.0
 	 * @version 1.0.0
 	**/
-	private function template($page){
+	private static function template($page){
 		// Get file.
 		$page = str_replace('WPSS_', '', $page);
 		// Set tpl.
