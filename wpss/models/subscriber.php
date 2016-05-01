@@ -28,7 +28,7 @@ class Subscriber{
 	 * @param $data  array  Post data from the form
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public function validate_data($data){
 		if(filter_var($data['emailaddress'], FILTER_VALIDATE_EMAIL)){
@@ -53,7 +53,7 @@ class Subscriber{
 	 * @param null
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public function check_user($data){
 		// Get all users.
@@ -65,6 +65,7 @@ class Subscriber{
 		$confirmed = array_map(function($user){
 			return get_the_title($user->ID);
 		}, $users);
+		
 		// Check array.
 		if(!in_array($data['emailaddress'], $confirmed)){
 			// User has not signed up before. Add new user..
@@ -88,7 +89,7 @@ class Subscriber{
 	 * @param null
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public function add_new_subscriber($data){
 		// Build data array.
@@ -102,8 +103,8 @@ class Subscriber{
 		// Check error.
         if(!is_wp_error($postID)){
         	// Update post meta.
-			update_post_meta($postID, WPSS_META_PREFIX . 'firstname', (isset($data['firstname'])) ? $data['firstname'] : '-');
-			update_post_meta($postID, WPSS_META_PREFIX . 'lastname', (isset($data['lastname'])) ? $data['lastname'] : '-');
+			update_post_meta($postID, WPSS_META_PREFIX . 'firstname', (isset($data['first_name'])) ? $data['first_name'] : '-');
+			update_post_meta($postID, WPSS_META_PREFIX . 'lastname', (isset($data['last_name'])) ? $data['last_name'] : '-');
 			update_post_meta($postID, WPSS_META_PREFIX . 'status', 'Subscribed');
 			update_post_meta($postID, WPSS_META_PREFIX . 'date', date('Y-m-d'));
 			update_post_meta($postID, WPSS_META_PREFIX . 'ip_address', $_SERVER['REMOTE_ADDR']);
@@ -113,6 +114,7 @@ class Subscriber{
 				'response' => WPSS_SUCCESSFULLY_ADDED,
 				'field'    => 'wp_simple_subscriber[emailaddress]'
 			));
+			
         }
         else{
 			// Output message.

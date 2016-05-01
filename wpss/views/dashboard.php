@@ -25,9 +25,9 @@ class Dashboard{
 	 * Returns correct template and applies data.
 	 *
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
-	public function fetch($page){
+	static function fetch($page){
 		// Set template.
 		$template = self::template($page);
 		// Get view.
@@ -41,9 +41,9 @@ class Dashboard{
 	 * Returns the correct template.
 	 *
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
-	private function template($page){
+	static function template($page){
 		// Get file.
 		$page = str_replace('WPSS_', '', $page);
 		// Set tpl.

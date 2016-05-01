@@ -28,7 +28,7 @@ class Request{
 	 * @param null
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public function __construct(){
 		// Check index is set and passes nonce.

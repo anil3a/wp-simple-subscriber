@@ -3,7 +3,7 @@ Contributors: sdellow
 Donate link: https://hellostew.com
 Tags: newsletter, subscribers, subscription, csv, simple, easy, campaign monitor, dot mailer, cheetah mail, mailchimp
 Requires at least: 3.8
-Tested up to: 4.3
+Tested up to: 4.5.1
 Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,6 +24,11 @@ WP Simple Subscriber simply collects data for an external Newsletter service of 
 == Screenshots ==
 
 == Changelog ==
+
+= 1.2.0 =
+* Added Ajax support in frontend
+* Fixed issue of save message in options page of admin
+* Fixed folder inclusion written in autoloader
 
 = 1.1.0 =
 * Fixed issue with CSV export not working.

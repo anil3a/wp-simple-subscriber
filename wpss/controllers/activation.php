@@ -25,7 +25,7 @@ class WPSS_Activation{
 	 * @param null
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public static function activate(){
 	}

@@ -29,7 +29,7 @@ class Dashboard{
 	 * @param null
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public function __construct(){
 		// Add pages.
@@ -44,7 +44,7 @@ class Dashboard{
      * @param null
      * @return null
      * @since 1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
     **/
 	public function create_wp_pages(){
 		$custom_pages['WPSS_plugin_options'] = add_submenu_page(
@@ -65,7 +65,7 @@ class Dashboard{
      * @param null
      * @return null
      * @since 1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
     **/
 	public function set_page(){
 		$view = new \WPSS\Views\Dashboard;

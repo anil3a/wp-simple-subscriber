@@ -1,0 +1,7 @@
+.wpss-subscriber-form .form-request-message .success {
+	color: green;
+}
+
+.wpss-subscriber-form .form-request-message .error {
+	color: red;
+}

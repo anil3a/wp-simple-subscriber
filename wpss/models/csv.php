@@ -28,7 +28,7 @@ class CSV{
 	 * @param null
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public function init(){
 		// Get the upload directory.
@@ -57,7 +57,7 @@ class CSV{
 	 * @param null
 	 * @return null
 	 * @since 1.0.0
-	 * @version 1.0.0
+	 * @version 1.2.0
 	**/
 	public function generate($file, $filename){
 		// Get the upload directory.

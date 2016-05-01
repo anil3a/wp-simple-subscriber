@@ -30,7 +30,7 @@ class Posttypes{
      * @param null
      * @return null
      * @since 1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
     **/
     public function __construct($posttypes){
         self::$posttypes = $posttypes;
@@ -48,7 +48,7 @@ class Posttypes{
      * @param null
      * @return null
      * @since 1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
     **/
     public static function register(){
         foreach(self::$posttypes as $pt){
@@ -86,7 +86,7 @@ class Posttypes{
      * @param null
      * @return null
      * @since 1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
     **/
     public static function messages($messages){
         global $post, $post_ID, $name, $singular, $post_name;
@@ -117,7 +117,7 @@ class Posttypes{
      * @param null
      * @return null
      * @since 1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
     **/
     public static function contextual_help($contextual_help, $screen_id, $screen){
         global $name;

@@ -231,5 +231,8 @@ function WPSS_subscriber_options_save(){
         	delete_option(WPSS_META_PREFIX . $k);
         }
 	}
+	add_action('admin_notices', [\WPSS\Controllers\Notices::getInstance(), 'displayNotice']);
+	$notice = \WPSS\Controllers\Notices::getInstance();
+	$notice->displaySuccess(__('Settings successfully updated.', 'WPSS'));
 }
 WPSS_subscriber_options_save();

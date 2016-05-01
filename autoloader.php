@@ -22,7 +22,7 @@ class WPSS_Autoloader{
      * @param null
      * @return null
      * @since 1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
     **/
     static public function loader($class){
         // Get software.
